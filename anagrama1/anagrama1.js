@@ -5,12 +5,14 @@ const body = document.querySelector("body")
 container.style.display = "flex"
 container.style.flexDirection = "column"
 container.style.minWidth = "400px"
+
 button.addEventListener("click", function () {
     
     let typedText = document.getElementById("input").value;
-   console.log(getAnagramsOf(typedText))
    let texto = document.createElement("p")
-   texto.innerText = `${getAnagramsOf(typedText).join(" ")}`
+   let array = []
+   array = getAnagramsOf(typedText)
+   texto.innerText = `${array.join(" ")}`
    container.appendChild(texto)
     
 });
