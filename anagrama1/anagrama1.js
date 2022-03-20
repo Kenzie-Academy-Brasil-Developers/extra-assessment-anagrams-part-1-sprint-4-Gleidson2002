@@ -5,15 +5,17 @@ const body = document.querySelector("body")
 container.style.display = "flex"
 container.style.flexDirection = "column"
 container.style.minWidth = "400px"
-
+let textoo = document.getElementById("textoo")
 button.addEventListener("click", function () {
-    
     let typedText = document.getElementById("input").value;
-   let texto = document.createElement("p")
+
    let array = []
    array = getAnagramsOf(typedText)
-   texto.innerText = `${array.join(" ")}`
-   container.appendChild(texto)
+   textoo.innerText = `${array.join(" ")}`
+   if (array.length===0){
+       textoo.innerText = "Sem anagramas"
+   }
+
     
 });
 
